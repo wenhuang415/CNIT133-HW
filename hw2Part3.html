@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Homework 2 Part3">
+    <title>Homework 2 Part3</title>
+	<style>
+		body{
+			background-image: url('ss.jpg');
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>
+		$( function() {
+			$( document ).toolTip();
+		} );
+
+		function process(){
+			var n1,n2,n3,n4,t1,t2,t3,t4,sum;
+			n1 = document.getElementById("item1").value;
+			n2 = document.getElementById("item2").value;
+			n3 = document.getElementById("item3").value;
+			n4 = document.getElementById("item4").value;
+			n1=parseInt(n1);
+			n2=parseInt(n2);
+			n3=parseInt(n3);
+			n4=parseInt(n4);
+
+			if((n1<0)||(n2<0)||(n3<0)||(n4<0)) {
+				document.getElementById("result").innerHTML="ERROR amount sold must be a positive number";
+			} 
+			else{
+				document.getElementById("sold1").value=n1;
+				document.getElementById("sold2").value=n2;
+				document.getElementById("sold3").value=n3;
+				document.getElementById("sold4").value=n4;
+				t1=n1*239.99;
+				t2=n2*129.77;
+				t3=n3*99.95;
+				t4=n4*350.89;
+				t1=t1.toFixed(2);
+				t2=t2.toFixed(2);
+				t3=t3.toFixed(2);
+				t4=t4.toFixed(2);
+				sum=parseFloat(t1+t2+t3+t4);
+				sum=sum.toFixed(2);
+				document.getElementById("total1").value="$"+t1;
+				document.getElementById("total2").value="$"+t2;
+				document.getElementById("total3").value="$"+t3;
+				document.getElementById("total4").value="$"+t4;
+				document.getElementById("totalSold").value="$"+sum;
+				var earning=(0.09*sum)+200;
+				earning=earning.toFixed(2);
+				document.getElementById("weeklyEarnings").value="$"+earning;
+			}
+		}
+	</script>
+	<style>
+		label {
+			display: inline-block;
+			width: 5em;
+		}
+	</style>
+</head>
+<body>
+	<h2>Part3</h2>
+	<form id=form1>
+		<p>Salesperson:
+		<input type="text" size="10" title="Please make sure that the salesperson's name is spelled correctly"></p>
+		<h3>Input the number of items sold for each item number:</h3>
+		<table>
+			<tr>
+				<td>Item 1:</td>
+				<td><input type="number" id="item1" size="10"></td>
+			</tr>
+			<tr>
+				<td>Item 2:</td>
+				<td><input type="number" id="item2" size="10"></td>
+			</tr>
+			<tr>
+				<td>Item 3:</td>
+				<td><input type="number" id="item3" size="10"></td>
+			</tr>
+			<tr>
+				<td>Item 4:</td>
+				<td><input type="number" id="item4" size="10"></td>
+			</tr>
+		</table>
+		<input type="button" value="Submit" onclick="process();">
+		<input type="reset" value="Reset" onclick="document.getElementById('result').innerHTML='';">
+		<table>
+			<tr>
+				<td>Item#</td>
+				<td>Price</td>
+				<td>Number Sold</td>
+				<td>Total</td>
+			</tr>
+			<tr>
+				<td>1</td><td>$239.99</td>
+				<td><input id="sold1" size="10" readonly></td>
+				<td><input id="total1" size="10" readonly></td>
+			</tr>
+			<tr>
+				<td>1</td><td>$129.75</td>
+				<td><input id="sold2" size="10" readonly></td>
+				<td><input id="total2" size="10" readonly></td>
+			</tr>
+			<tr>
+				<td>1</td><td>$99.95</td>
+				<td><input id="sold3" size="10" readonly></td>
+				<td><input id="total3" size="10" readonly></td>
+			</tr>
+			<tr>
+				<td>1</td><td>$350.89</td>
+				<td><input id="sold4" size="10" readonly></td>
+				<td><input id="total4" size="10" readonly></td>
+			</tr>
+		</table>
+		<table>
+		<tr>
+			<td>Total Amount Sold:</td>
+			<td><input id="totalSold" size="10" readonly></td>
+		</tr>
+		<tr>
+			<td>Total Weekly Earnings:</td>
+			<td><input id="weeklyEarnings" size="10" readonly></td>
+		</tr>
+		</table>
+	</form>
+	<div id="result"></div>
+	<a href="hw2.html">Return</a>
+</body>
+</html>

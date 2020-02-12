@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="homework2 part2">
+	<title>Homework 2 Part2</title>
+	<style>
+		body{
+			background-image: url('ss.jpg');
+		}
+	</style>
+	<script>
+		function process(){
+			var hwgrade, midtermgrade, finalgrade, participationgrade;
+			hwgrade = document.getElementById("homeworkid").value;
+			midtermgrade = document.getElementById("midtermid").value;
+			finalgrade = document.getElementById("finalid").value;
+			participationgrade = document.getElementById("participationid").value;
+			if((hwgrade>=0) && (hwgrade <=100) && (midtermgrade>=0) && (midtermgrade<=100) && (finalgrade>=0) && (finalgrade<=100) && (participationgrade>=0) && (participationgrade<=100)) {
+				var avg = (.5*hwgrade)+(.2*midtermgrade)+(.2*finalgrade)+(.1*participationgrade);
+				document.getElementById("finalaverageid").value=avg;
+				var letterGrade;
+				if((avg>=90)&&(avg<=100)){letterGrade="A";}
+				if((avg>=80)&&(avg<=89)){letterGrade="B";}
+				if((avg>=70)&&(avg<=79)){letterGrade="C";}
+				if((avg>=60)&&(avg<=69)){letterGrade="D";}
+				if(avg<=59){letterGrade="F";}
+				document.getElementById("finalgradeid").value=letterGrade;
+				document.getElementById("result").innerHTML="";
+				if((letterGrade=="F")||(letterGrade=="D")) {
+					document.getElementById("result").innerHTML="Student must retake the course";
+				}
+			} else{
+				document.getElementById("result").innerHTML="ERROR grades must be between <span style='color:red;'>0</span> and <span style='color:red;'>100</span>.";
+			}
+		}
+	</script>
+</head>
+<body>
+	<h2>Part2</h2>
+	<form name="form1" id="form1id">
+		<table>
+			<tr>
+				<td>Homework Average:</td>
+				<td><input type="number" id="homeworkid" size="10"></td>
+			</tr>
+			<tr>
+				<td>Midterm Exam Score:</td>
+				<td><input type="number" id="midtermid" size="10"></td>
+			</tr>
+			<tr>
+				<td>Final Exam Score:</td>
+				<td><input type="number" id="finalid" size="10"></td>
+			</tr>
+			<tr>
+				<td>Participation:</td>
+				<td><input type="number" id="participationid" size="10"></td>
+			</tr>
+			<tr>
+				<td>Final Average:</td>
+				<td><input type="number" id="finalaverageid" size="10" readonly></td>
+			</tr>
+			<tr>
+				<td>Final Grade:</td>
+				<td><input type="text" id="finalgradeid" size="10" readonly></td>
+			</tr>
+		</table>
+		<input type="button" value="Call Function" onclick="process();">
+		<input type="reset" value="clear numbers" onclick="document.getElementById('result').innerHTML='';">
+	</form>
+	<br><br><br><br>
+	<div id="result"></div>
+	<br><br><br>
+	<a href="hw2.html">Return</a>
+</body>
+</html>

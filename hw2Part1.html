@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="homework2 part1">
+		<title>Homework 2 Part1</title>
+		<style>
+			body {
+ 		 	background-image: url('ss.jpg');
+			}
+		</style>
+		<script>
+			function process(){
+				var n1,n2,n3,n4,n5,positive,negative,zero;
+				positive = 0;
+				negative = 0;
+				zero = 0;
+				n1 = document.getElementById("num1id").value;
+				n2 = document.getElementById("num2id").value;
+				n3 = document.getElementById("num3id").value;
+				n4 = document.getElementById("num4id").value;
+				n5 = document.getElementById("num5id").value;
+				if((isNaN(n1))||(isNaN(n2))||(isNaN(n3))||(isNaN(n4))||(isNaN(n5))) {
+					document.getElementById("div1").innerHTML="ERROR Input must be <span style='color:red;'>numbers!'</span>";
+				}
+				else {
+					if(n1>0){positive++;}
+					if(n1<0){negative++;}
+					if(n1==0){zero++;}
+					if(n2>0){positive++;}
+					if(n2<0){negative++;}
+					if(n2==0){zero++;}
+					if(n3>0){positive++;}
+					if(n3<0){negative++;}
+					if(n3==0){zero++;}
+					if(n4>0){positive++;}
+					if(n4<0){negative++;}
+					if(n4==0){zero++;}
+					if(n5>0){positive++;}
+					if(n5<0){negative++;}
+					if(n5==0){zero++;}
+					document.getElementById("positivesid").value=positive;
+					document.getElementById("negativesid").value=negative;
+					document.getElementById("zerosid").value=zero;			
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h2>Part1</h2>
+		<form name="form1" id="form1id">
+			<table>
+				<tr>
+					<td>First Number:</td>
+					<td><input type="number" name="num1" id="num1id" size="10"></td>
+				</tr>
+				<tr>
+					<td>Second Number:</td>
+					<td><input type="number" name="num2" id="num2id" size="10"></td>
+				</tr>
+				<tr>
+					<td>Third Number:</td>
+					<td><input type="number" name="num3" id="num3id" size="10"></td>
+				</tr>
+				<tr>
+					<td>Fourth Number:</td>
+					<td><input type="number" name="num4" id="num4id" size="10"></td>
+				</tr>
+				<tr>
+					<td>Fifth Number:</td>
+					<td><input type="number" name="num5" id="num5id" size="10"></td>
+				</tr>
+				<tr>
+					<td>Number of Positives:</td>
+					<td><input type="text" name="positives" id="positivesid" size="10" readonly></td>
+				</tr>
+				<tr>
+					<td>Number of Negatives:</td>
+					<td><input type="text" name="negatives" id="negativesid" size="10" readonly></td>
+				</tr>
+				<tr>
+					<td>Number of Zeros:</td>
+					<td><input type="text" name="zeros" id="zerosid" size="10" readonly></td>
+				</tr>
+				</table>
+					<input type="button" value="Call Function" onclick="process();">
+					<input type="reset" value="clear numbers">
+				</form>
+		<div id="div1"></div>
+		<br><br><br>
+		<a href="hw2.html">Return</a>
+	</body>
+</html>
