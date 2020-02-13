@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="Homework 2 Part4">
+		<title>Homework 3 Part4</title>
+		<style>
+			body{
+				background-image: url('ss.jpg');
+			}
+		</style>
+		<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script>
+			var x;
+			var y;
+			$( document ).ready(generateQuestion);
+			function randomInt(max){
+				return Math.floor(Math.random()*Math.floor(max));
+			}
+			function generateQuestion(){
+				x = randomInt(10);
+				y = randomInt(10);
+				document.getElementById("answerid").innerHTML="";
+				document.getElementById("questionid").innerHTML="What is "+x+" times " +y+"?";
+			}
+			function submit(){
+				console.log(x);
+				console.log(y);
+				console.log(x*y);
+				if(document.getElementById("inputid").value==(x*y)){
+					document.getElementById("answerid").innerHTML="Very good!";
+					//confirm("Would you like to continue?");
+				}
+				else{
+					document.getElementById("answerid").innerHTML="No. Please try again.";
+				}
+			}
+			generateQuestion();
+		</script>
+	</head>
+	<body>
+		<div id="questionid"></div>
+		<form>
+			Answer:<input type="number" id="inputid">
+		</form>
+		<input type="button" value="Submit" onclick="submit();">
+		<input type="reset" value="Reset" onclick="document.getElementById('answerid').innerHTML='';">
+		<br>
+		<input type="button" value="New Question" onclick="generateQuestion();">
+		<div id="answerid"></div>
+	</body>
+</html>
