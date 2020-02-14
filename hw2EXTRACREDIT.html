@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="Homework 2 EXTRA CREDIT">
+		<title>Homework 2 EXTRA CREDIT</title>
+		<style>
+		  body {
+ 		   background-image: url('ss.jpg');
+		  }
+	  	</style>
+	  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#flip").click(function(){
+					$("#panel").slideToggle("fast");
+				}).click();
+			});
+		</script> 
+	</head>
+	<body>
+		<div id="flip">Click to Show/Hide Instructions</div>
+		<div id="panel">
+			<table border="1">
+				The exchange rates for 1 U.S. dollar in July 2019 were:
+				<tr>
+					<td>Euro</td>
+					<td align="right">0.89</td>
+				</tr>
+				<tr>
+					<td>Canadian Dollar</td>
+					<td align="right">1.31</td>
+				</tr>
+				<tr>
+					<td>Hong Kong Dollar</td>
+					<td align="right">7.80</td>
+				</tr>
+				<tr>
+					<td>Japanese Yen</td>
+					<td align="right">1083.80</td>
+				</tr>
+				<tr>
+					<td>Mexican Peso</td>
+					<td align="right">19.11</td>
+				</tr>
+			</table>
+		</div>
+		<br>
+			<table border="1">
+				<tr>Monetary Exchange Rates</tr>
+				<tr>
+					<td alight="center">Currency</td>
+					<td alight="center">Rate</td>
+					<td alight="center">Value</td>
+				</tr>
+				<tr>
+					<td>Euro></td>
+					<td alight="right">8.90</td>
+					<td alight="right"><input type="number" id=EUid readonly></td>
+				</tr>
+				<tr>
+					<td>Canadian Dollar</td>
+					<td alight="right">13.10</td>
+					<td alight="right"><input type="number" id=CNid readonly></td>
+				</tr>
+				<tr>
+					<td>Hong Kong Dollar</td>
+					<td alight="right">78.00</td>
+					<td alight="right"><input type="number" id=HKid readonly></td>
+				</tr>
+				<tr>
+					<td>Japanese Yen</td>
+					<td alight="right">1083.80</td>
+					<td alight="right"><input type="number" id=JYid readonly></td>
+				</tr>
+				<tr>
+					<td>Mexican Peso</td>
+					<td alight="right">191.10</td>
+					<td alight="right"><input type="number" id=MPid readonly></td>
+				</tr>
+				<tr>
+					<td>Enter Amount of U.S Dollars</td>
+					<td>1.00</td>
+					<td><input type="number" id="inputid"</td>
+				</td>
+			</table>
+		<br><br><br>
+		<a href="hw2.html">Return</a>
+	</body>
+</html>

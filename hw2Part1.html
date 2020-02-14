@@ -20,8 +20,8 @@
 				n3 = document.getElementById("num3id").value;
 				n4 = document.getElementById("num4id").value;
 				n5 = document.getElementById("num5id").value;
-				if((isNaN(n1))||(isNaN(n2))||(isNaN(n3))||(isNaN(n4))||(isNaN(n5))) {
-					document.getElementById("div1").innerHTML="ERROR Input must be <span style='color:red;'>numbers!'</span>";
+				if(isNaN(n1)||isNaN(n2)||isNaN(n3)||isNaN(n4)||isNaN(n5)) {
+					document.getElementById("div1").innerHTML="ERROR Input must be a number";
 				}
 				else {
 					if(n1>0){positive++;}
@@ -52,35 +52,35 @@
 			<table>
 				<tr>
 					<td>First Number:</td>
-					<td><input type="number" name="num1" id="num1id" size="10"></td>
+					<td><input type="number" name="num1" id="num1id"></td>
 				</tr>
 				<tr>
 					<td>Second Number:</td>
-					<td><input type="number" name="num2" id="num2id" size="10"></td>
+					<td><input type="number" name="num2" id="num2id"></td>
 				</tr>
 				<tr>
 					<td>Third Number:</td>
-					<td><input type="number" name="num3" id="num3id" size="10"></td>
+					<td><input type="number" name="num3" id="num3id"></td>
 				</tr>
 				<tr>
 					<td>Fourth Number:</td>
-					<td><input type="number" name="num4" id="num4id" size="10"></td>
+					<td><input type="number" name="num4" id="num4id"></td>
 				</tr>
 				<tr>
 					<td>Fifth Number:</td>
-					<td><input type="number" name="num5" id="num5id" size="10"></td>
+					<td><input type="number" name="num5" id="num5id" ></td>
 				</tr>
 				<tr>
 					<td>Number of Positives:</td>
-					<td><input type="text" name="positives" id="positivesid" size="10" readonly></td>
+					<td><input type="text" name="positives" id="positivesid" readonly></td>
 				</tr>
 				<tr>
 					<td>Number of Negatives:</td>
-					<td><input type="text" name="negatives" id="negativesid" size="10" readonly></td>
+					<td><input type="text" name="negatives" id="negativesid" readonly></td>
 				</tr>
 				<tr>
 					<td>Number of Zeros:</td>
-					<td><input type="text" name="zeros" id="zerosid" size="10" readonly></td>
+					<td><input type="text" name="zeros" id="zerosid" readonly></td>
 				</tr>
 				</table>
 					<input type="button" value="Call Function" onclick="process();">
