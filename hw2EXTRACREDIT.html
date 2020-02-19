@@ -15,6 +15,15 @@
 				$("#flip").click(function(){
 					$("#panel").slideToggle("fast");
 				}).click();
+
+				$("#submitid").click(function(){
+					var usd = $("#inputid").val();
+					$("#EUid").val((0.89*usd).toFixed(2));
+					$("#CNid").val((1.31*usd).toFixed(2));
+					$("#HKid").val((7.80*usd).toFixed(2));
+					$("#JYid").val((1083.80*usd).toFixed(2));
+					$("#MPid").val((19.11*usd).toFixed(2));
+				});
 			});
 		</script> 
 	</head>
@@ -54,7 +63,7 @@
 					<td alight="center">Value</td>
 				</tr>
 				<tr>
-					<td>Euro></td>
+					<td>Euro</td>
 					<td alight="right">8.90</td>
 					<td alight="right"><input type="number" id=EUid readonly></td>
 				</tr>
@@ -84,6 +93,7 @@
 					<td><input type="number" id="inputid"</td>
 				</td>
 			</table>
+			<input type="button" value="submit" id="submitid">
 		<br><br><br>
 		<a href="hw2.html">Return</a>
 	</body>
