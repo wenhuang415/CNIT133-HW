@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="homework3 part1">
+		<title>Homework 3 Part1</title>
+		<style>
+			body {
+				background-image: url('ss.jpg');
+			}
+		</style>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+ 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script>
+			$(document).ready(hw2part1a);
+			$(document).ready(hw2part1b);
+			$( function() {
+				$( "#form1" ).draggable();
+				$( "#returnid" ).draggable();
+				$( "#part1aid").draggable();
+				$("#form2").draggable();
+				$("#part1bid").draggable();
+				$("#form3").draggable();
+				$("#form4").draggable();
+			});
+			function hw2part1a(){
+				var sum = 0;
+				var prod = 1;
+				for(var i = 5;i<=21;i+=4){
+					sum+=i;
+					prod*=i;
+				}
+				document.getElementById("sumaid").value=sum;
+				document.getElementById("productaid").value=prod;
+			}
+			function hw2part1b(){
+				var i = 3;
+				var sum = 0;
+				var prod = 1;
+				while(i<=21) {
+					sum+=i;
+					prod*=i;
+					i+=3;
+				}
+				document.getElementById("sumbid").value=sum;
+				document.getElementById("productbid").value=prod;
+			}
+		</script>
+	</head>
+	<body>
+		<h3 id="part1aid">Part1a: Sum and Product of every fourth interger from 5 to 21 inclusive</h3>
+		<form id="form1">
+			Sum:<input type="number" id="sumaid" readonly>
+		</form>
+		<form id="form2">
+			Product:<input id="productaid" type="number" readonly>
+		</form>
+		<br><br>
+		<h3 id="part1bid">Part1b: Sum and Product of every every third integer from 3 to 21 inclusive</h3>
+		<form id="form3">
+			Sum:<input type="number" id="sumbid" readonly>
+		</form>
+		<form id="form4">
+			Product:<input type="number" id="productbid" readonly>
+		</form>
+		<br><br><br>
+		<a href="hw3.html" id="returnid">Return</a>
+	</body>
+</html>
