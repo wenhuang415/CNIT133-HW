@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charsset="utf-8">
+		<meta charset="utf-8">
 		<meta name="description" content="homework3 part2">
 		<title>Homework 3 Part2</title>
 		<style>
@@ -16,95 +16,34 @@
 		</script>
 	</head>
 	<body>
-		<table border="1">
-			<tbody>
-				<tr style="background-color: maroon; color: white;">
-					<th>Year</th>
-					<th>Amount on deposit</th>
-					<th>Interest Rate</th>
-				</tr>
-				<tr style="background-color: orange;">
-					<th>1</th>
-					<th id="int5yr1"></th>
-					<th>0.05</th>
-				</tr>
-				<tr style="background-color: yellow;">
-					<th>2</th>
-					<th id="int5yr2"></th>
-					<th>0.05</th>
-				</tr>
-				<tr style="background-color: orange;">
-					<th>3</th>
-					<th id="int5yr3"></th>
-					<th>0.05</th>
-				</tr>
-				<tr style="background-color: yellow;">
-					<th>4</th>
-					<th id="int5yr4"></th>
-					<th>0.05</th>
-				</tr>
-			</tbody>
-		</table>
-		<br>
-		<table border="1">
-			<tbody>
-				<tr style="background-color: maroon; color: white;">
-					<th>Year</th>
-					<th>Amount on deposit</th>
-					<th>Interest Rate</th>
-				</tr>
-				<tr style="background-color: orange;">
-					<th>1</th>
-					<th id="int6yr1"></th>
-					<th>0.06</th>
-				</tr>
-				<tr style="background-color: yellow;">
-					<th>2</th>
-					<th id="int6yr2"></th>
-					<th>0.06</th>
-				</tr>
-				<tr style="background-color: orange;">
-					<th>3</th>
-					<th id="int6yr3"></th>
-					<th>0.06</th>
-				</tr>
-				<tr style="background-color: yellow;">
-					<th>4</th>
-					<th id="int6yr4"></th>
-					<th>0.06</th>
-				</tr>
-			</tbody>
-		</table>
-		<br>
-		<table border="1">
-			<tbody>
-				<tr style="background-color: maroon; color: white;">
-					<th>Year</th>
-					<th>Amount on deposit</th>
-					<th>Interest Rate</th>
-				</tr>
-				<tr style="background-color: orange;">
-					<th>1</th>
-					<th id="int7yr1"></th>
-					<th>0.07</th>
-				</tr>
-				<tr style="background-color: yellow;">
-					<th>2</th>
-					<th id="int7yr2"></th>
-					<th>0.07</th>
-				</tr>
-				<tr style="background-color: orange;">
-					<th>3</th>
-					<th id="int7yr3"></th>
-					<th>0.07</th>
-				</tr>
-				<tr style="background-color: yellow;">
-					<th>4</th>
-					<th id="int7yr4"></th>
-					<th>0.07</th>
-				</tr>
-			</tbody>
-		</table>
+		<script>
+			var a ="";
+			for(var b = 0.05;b<0.08;b+=0.01){
+				a+='<table border="1">';
+				a+='<tr style="background-color: maroon; color: white;">';
+				a+='<th>Year</th>';
+				a+='<th>Amount on deposit</th>';
+				a+='<th>Interest Rate</th></tr>';
+				var d = compound(1000,b);
+				for(var c=0; c<4; c++) {
+					if(c%2==0) {
+						a+='<tr style="background-color: orange;">';
+						a+='<th>'+(c+1)+'</th>';
+						a+='<th>'+d.toFixed(2)+'</th>'
+						a+='<th>'+b.toFixed(2)+'</th></tr>';
+					} else{
+						a+='<tr style="background-color: yellow;">';
+						a+='<th>'+(c+1)+'</th>';
+						a+='<th>'+d.toFixed(2)+'</th>'
+						a+='<th>'+b.toFixed(2)+'</th></tr>';
+					}
+					d=compound(d,b);
+				}
+				a+="</table>"
+			}
+			document.write(a);
+		</script>
+
 		<br><br><br>
 		<a href="hw3.html">Return</a>
 	</body>
