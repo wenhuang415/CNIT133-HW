@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="homework3 part3">
+		<title>Homework 3 Part2</title>
+		<style>
+			body{
+				background-image: url('ss.jpg');
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			Which fruit do you like?<br>
+			<select id="select1id" onchange="function1()">
+				<option value="apple">Apples</option>
+				<option value="banana">Bananas</option>
+				<option value="orange">Oranges</option>
+			</select>
+			<br><br>
+			Which website do you want to visit?<br>
+			<select id="select2id">
+				<option value="google">Google</option>
+				<option value="youtube">Youtube</option>
+				<option value="reddit">Reddit</option>
+			</select>
+			<input type="button" value="Go" onclick="function2()">
+		</div>
+		<script>
+			function function1(){
+				var x = document.getElementById("select1id").value;
+				switch(x) {
+					case "apple":
+						window.open('https://images-na.ssl-images-amazon.com/images/I/918YNa3bAaL._SX569_.jpg');
+						break;
+					case "banana":
+						window.open('https://api.time.com/wp-content/uploads/2019/11/gettyimages-459761948.jpg?w=600&quality=85');
+						break;
+					case "orange":
+						window.open('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTjwGGYI8AfGWV80mnqRUAGEUE71uUdFY8VvDT26tjjirEOe4XD');
+						break;
+				}
+			}
+
+			function function2(){
+				var x = document.getElementById("select2id").value;
+				switch(x) {
+					case "google":
+						window.open('https://www.google.com/');
+						break;
+					case "youtube":
+						window.open('https://www.youtube.com/');
+						break;
+					case "reddit":
+						window.open('https://www.reddit.com/');
+						break;
+				}
+			}
+
+		</script>
+		<br><br><br>
+		<a href="hw3.html">Return</a>
+	</body>
+</html>
